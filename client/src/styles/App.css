@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-card {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border: 1px solid pink;
+  width: 90%;
+  margin: 5% 5% 5% 5%;
+}
+
+.nav-link {
+  color: #61dafb;
+  font-size: 1.2rem;
+}
+
+.nav-bar {
+  border-bottom: 1px solid white;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.register-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  height: 250px;
+  width: 300px;
+}
+
+.register-card-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.text-box {
+  width: 150px;
+}
+
+.jokes-list {
+  color: #61dafb;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.jokes-list li {
+  margin-bottom: 5px;
+}
