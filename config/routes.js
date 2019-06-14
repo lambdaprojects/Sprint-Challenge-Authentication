@@ -1,6 +1,7 @@
 const axios = require("axios");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const UserHelper = require("../user/user-model.js");
 
 const { authenticate } = require("../auth/authenticate");
 
@@ -13,9 +14,15 @@ module.exports = server => {
 async function register(req, res) {
   // implement user registration
   try {
+    console.log("::: WITHIN USER REGISTRATION :::");
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 10);
-  } catch (error) {}
+    user.password = hash;
+    let addUser = await UserHelper.add(user);
+    res.status(201).json(addUser);
+  } catch (error) {
+    res.status(500).json(error);
+  }
 }
 
 function login(req, res) {

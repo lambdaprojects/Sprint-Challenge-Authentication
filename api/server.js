@@ -10,7 +10,7 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
-//configureRoutes(server);
+configureRoutes(server);
 
 server.get("/", (req, res) => {
   res.send("Its alive!!");
