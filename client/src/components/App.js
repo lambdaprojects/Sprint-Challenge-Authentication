@@ -7,31 +7,42 @@ import JokesList from "./jokes/JokesList";
 
 import "../styles/App.css";
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <div className="App-card">
-          <div className="nav-bar">
-            <NavLink to="/login" className="nav-link">
-              Login
-            </NavLink>
-            <NavLink to="/register" className="nav-link">
-              Register
-            </NavLink>
-            <NavLink to="/logout" className="nav-link">
-              Logout
-            </NavLink>
+class App extends React.Component {
+  state = {
+    isLoggedIn: false
+  };
+
+  handleLogout = e => {
+    e.preventDefault();
+    alert("Clicking logout");
+    // localStorage.removeItem("jwt");
+    // window.location.reload();
+  };
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <div className="App-card">
+            <div className="nav-bar">
+              <NavLink to="/login" className="nav-link">
+                Login
+              </NavLink>
+              <NavLink to="/register" className="nav-link">
+                Register
+              </NavLink>
+              <button onClick={this.handleLogout}>Logout</button>
+            </div>
+            <main>
+              <Route path="/login" component={LoginForm} />
+              <Route path="/register" component={RegisterForm} />
+              <Route path="/jokes" component={JokesList} />
+            </main>
           </div>
-          <main>
-            <Route path="/login" component={LoginForm} />
-            <Route path="/register" component={RegisterForm} />
-            <Route path="/jokes" component={JokesList} />
-          </main>
         </div>
-      </div>
-    </Router>
-  );
+      </Router>
+    );
+  }
 }
 
 export default App;

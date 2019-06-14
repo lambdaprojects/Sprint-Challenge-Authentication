@@ -12,13 +12,13 @@ class JokesList extends React.Component {
   render() {
     return (
       <>
-        <h2>Awesome Jokes!!</h2>
+        <h4>Awesome Jokes!!</h4>
 
-        <ul>
+        <ol className="jokes-list">
           {this.state.jokes.map(j => (
             <li key={j.id}>{j.joke}</li>
           ))}
-        </ul>
+        </ol>
       </>
     );
   }

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 
 const token = localStorage.getItem("jwt");
+//alert(token);
 
 // could be process.env.API_URL
 axios.defaults.baseURL = "http://localhost:3300/api";
